@@ -128,7 +128,7 @@
 !
 !===================
 !
-&input_setupdottmann
+&input_setupsquid
 !
 !
 ! read in subroutine setupdottmann in FEISTY.f90

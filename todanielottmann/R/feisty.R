@@ -25,7 +25,7 @@ loadFEISTYmodel = function() {
   if (sys=='Linux') 
     sLibname = '../lib/libFEISTY.so'
   if (sys=='Windows')
-    sLibname = '../lib/FEISTY_squid.dll'
+    sLibname = '../lib/libFEISTY.dll'
   
   dyn.load(sLibname)
 }
@@ -51,7 +51,7 @@ feisty <- function(param, USEdll=TRUE, result) {
   #
   if (USEdll){
     loadFEISTYmodel()
-    dummy = .Fortran("f_setupdottmann", pprod=as.numeric(param$K[1]),
+    dummy = .Fortran("f_setupsquid", pprod=as.numeric(param$K[1]),
                      bottom=as.numeric(param$bottom),
                      nStages=as.integer(param$nstage))
     
